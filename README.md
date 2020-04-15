@@ -1,0 +1,3 @@
+```sh
+export DATABASE_URL="mysql://root:prisma@127.0.0.1:3306/test"
+```

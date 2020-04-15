@@ -1,0 +1,16 @@
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String?
+  husband  User      @relation("MarriagePartners", fields: [id], references: [id])
+  wife     User?     @relation("MarriagePartners")
+}
+
